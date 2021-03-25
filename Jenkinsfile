@@ -26,7 +26,9 @@ pipeline {
     stage('Run maven') {
       steps {
         container('maven') {
-          sh '$hostname'
+          sh """
+            echo $hostname
+            """
         }
         container('busybox') {
           sh '/bin/busybox'
