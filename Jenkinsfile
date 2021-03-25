@@ -37,6 +37,8 @@ stages {
         container("docker-build") {
             sh """
             echo $hostname
+            echo "GIT_BRANCH=${env.GIT_BRANCH}" >> /etc/environment
+             echo "GIT_COMMIT=${env.GIT_COMMIT}" >> /etc/environment
               //docker login -username pavan123456788 -password Pavan@1234 
               //docker build --tag pavan123456788/demo1:v8 .
               //docker push ${tag}
