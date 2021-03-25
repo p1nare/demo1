@@ -30,9 +30,6 @@ spec:
     """
     }
     }
-    environment { 
-        user = "${name}"
-    }
 
 stages {
     stage("Build") {
@@ -65,7 +62,7 @@ stages {
             try {
         container("docker-build1") {
             sh """
-            python3 /root/r.py $user
+            python3 /root/r.py
             """
             }
             env.a='True'
