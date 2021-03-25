@@ -6,7 +6,7 @@ apiVersion: v1
 kind: Pod
 metadata:
         labels:
-          fgid: "00013"
+          l: "skd"
         name: test-ebs
 spec:
   containers:
