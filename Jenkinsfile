@@ -17,11 +17,14 @@ pipeline {
             volumeMounts:
                - mountPath: /var/run/docker.sock
                  name: docker-sock
-          - name: busybox
-            image: busybox
+          - name: docker-build1
+            image: pavan123456788/demo1:v5
             command:
-            - cat
+             - cat
             tty: true
+            volumeMounts:
+               - mountPath: /var/run/docker.sock
+                 name: docker-sock
           volumes:
            - hostPath:
                path: /var/run/docker.sock
@@ -41,8 +44,8 @@ pipeline {
 
               sh """
               docker login --username pavan123456788 --password Pavan@1234 
-              docker build --tag pavan123456788/demo1:v9 .
-              docker push pavan123456788/demo1:v9
+              docker build --tag pavan123456788/demo1:latest .
+              docker push pavan123456788/demo1:latest
             """
             }
           
