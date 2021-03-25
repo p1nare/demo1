@@ -14,11 +14,18 @@ pipeline {
             command:
             - cat
             tty: true
+           volumeMounts:
+               - mountPath: /var/run/docker.sock
+                 name: docker-sock
           - name: busybox
             image: busybox
             command:
             - cat
             tty: true
+          volumes:
+           - hostPath:
+               path: /var/run/docker.sock
+             name: docker-sock
         """.stripIndent()
     }
   }
