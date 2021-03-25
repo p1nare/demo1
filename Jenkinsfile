@@ -10,7 +10,7 @@ metadata:
         name: test-ebs
 spec:
   containers:
-     - name: docker-build
+    - name: docker-build
       image: docker
       command:
         - cat
