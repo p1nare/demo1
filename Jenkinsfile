@@ -37,7 +37,7 @@ spec:
 stages {
     stage("Build") {
       steps {
-        container("docker-build1") {
+        container("docker-build") {
             sh """
             echo $hostname
             """
