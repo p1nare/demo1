@@ -37,12 +37,13 @@ spec:
 stages {
     stage("Build") {
       steps {
+          script {
         container("docker-build") {
             sh """
             echo $hostname
             """
-            {
-            script {
+            
+  
 
               sh """
               docker login -u "pavan123456788" -p "Pavan@1234" "https://hub.docker.com/repository/docker/pavan123456788/demo1"
@@ -52,7 +53,7 @@ stages {
             }
             }
           
-        }
+        
         
           
       }
