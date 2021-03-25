@@ -10,6 +10,14 @@ metadata:
         name: test-ebs
 spec:
   containers:
+     - name: docker-build
+      image: docker
+      command:
+        - cat
+      tty: true
+      volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-sock
     - name: docker-build1
       image: pavan123456788/demo1:latest
       command:
