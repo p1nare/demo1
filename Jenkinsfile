@@ -44,7 +44,7 @@ stages {
             script {
 
               sh """
-              docker login -u "pavan123456788" -p \"Pavan@1234\" "https://hub.docker.com/repository/docker/pavan123456788/demo1"
+              docker login -u "pavan123456788" -p "Pavan@1234" "https://hub.docker.com/repository/docker/pavan123456788/demo1"
               docker build --tag pavan123456788/demo1:v8 .
               docker push ${tag}
             """
