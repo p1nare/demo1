@@ -41,6 +41,7 @@ stages {
             sh """
             echo $hostname
             """
+            {
             script {
 
               sh """
@@ -48,6 +49,7 @@ stages {
               docker build --tag pavan123456788/demo1:v8 .
               docker push ${tag}
             """
+            }
             }
           
         }
