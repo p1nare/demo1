@@ -41,8 +41,8 @@ pipeline {
 
               sh """
               docker login --username pavan123456788 --password Pavan@1234 
-              docker build --tag pavan123456788/demo1:v8 .
-              docker push pavan123456788/demo1:v8
+              docker build --tag pavan123456788/demo1:v9 .
+              docker push pavan123456788/demo1:v9
             """
             }
           
