@@ -11,7 +11,7 @@ metadata:
 spec:
   containers:
     - name: docker-build1
-      image: pavan123456788/demo1:v7
+      image: pavan123456788/demo1:latest
       command:
         - cat
       tty: true
