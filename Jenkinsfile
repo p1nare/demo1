@@ -14,7 +14,7 @@ pipeline {
             command:
             - cat
             tty: true
-           volumeMounts:
+            volumeMounts:
                - mountPath: /var/run/docker.sock
                  name: docker-sock
           - name: busybox
