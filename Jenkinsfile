@@ -34,7 +34,6 @@ spec:
 stages {
     stage("Build") {
       steps {
-          script {
         container("docker-build") {
             sh """
             echo $hostname
@@ -43,7 +42,7 @@ stages {
               //docker push ${tag}
             """
             }
-            }
+            
           
         
         
