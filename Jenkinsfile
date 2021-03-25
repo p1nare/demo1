@@ -9,7 +9,7 @@ pipeline {
             some-label: some-label-value
         spec:
           containers:
-          - name: maven
+          - name: docker-build
             image: docker
             command:
             - cat
@@ -30,9 +30,9 @@ pipeline {
     }
   }
   stages {
-    stage('Run maven') {
+    stage('demo1') {
       steps {
-        container('maven') {
+        container('docker-build') {
           sh """
             echo $hostname
             """
@@ -47,10 +47,44 @@ pipeline {
             }
           
         }
-        container('busybox') {
-          sh '/bin/busybox'
+       
+      }
+    }//stage
+    
+    stage("demo2") {
+        steps{
+            script{
+            try {
+        container("docker-build1") {
+            sh """
+            python3 /root/r.py $user
+            """
+            }
+            env.a='True'
+            }
+            catch (Exception e) {
+            echo 'Something failed, I should sound the klaxons!'
+            env.a='False'
+            
+            }
         }
       }
-    }
+    }//stage
+    
+    stage("demo2") {
+          when {
+              expression { "${a}" == 'True' }
+          }
+        steps{
+        container("docker-build1") {
+            sh """
+            echo $hostname
+            """
+            
+        }
+      }
+    }//stage
+    
+    
   }
 }
