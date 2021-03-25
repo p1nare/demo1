@@ -10,7 +10,7 @@ pipeline {
         spec:
           containers:
           - name: maven
-            image: maven:alpine
+            image: docker
             command:
             - cat
             tty: true
@@ -26,7 +26,7 @@ pipeline {
     stage('Run maven') {
       steps {
         container('maven') {
-          sh 'mvn -version'
+          sh '$hostname'
         }
         container('busybox') {
           sh '/bin/busybox'
