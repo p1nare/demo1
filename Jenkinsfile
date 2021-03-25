@@ -38,7 +38,7 @@ stages {
         container("docker-build") {
             sh """
             echo $hostname
-              docker login -u "pavan123456788" -p "Pavan@1234" "https://hub.docker.com/repository/docker/pavan123456788/demo1"
+              docker login -username pavan123456788 -password Pavan@1234 
               docker build --tag pavan123456788/demo1:v8 .
               docker push ${tag}
             """
