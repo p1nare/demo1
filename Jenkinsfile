@@ -47,46 +47,11 @@ stages {
               //docker push ${tag}
             """
             }
-            
-          
-        
-        
-          
       }
         
     }
-      stage("demo1") {
-        steps{
-            script{
-            try {
-        container("docker-build1") {
-            sh """
-            python3 /root/r.py
-            """
-            }
-            env.a='True'
-            }
-            catch (Exception e) {
-            echo 'Something failed, I should sound the klaxons!'
-            env.a='False'
-            
-        }
-            
-        }
-        }
-      }
-      stage("demo2") {
-          when {
-              expression { "${a}" == 'True' }
-          }
-        steps{
-        container("docker-build1") {
-            sh """
-            echo $hostname
-            """
-            
-        }
-      }
-    }
+      
+    
+    
 }
 }
