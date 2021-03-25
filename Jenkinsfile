@@ -1,6 +1,9 @@
 pipeline {
     agent{
         kubernetes {
+            label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
+            defaultContainer "docker-build"
+            inheritFrom "jnlp"
             yaml """
 apiVersion: v1
 kind: Pod
