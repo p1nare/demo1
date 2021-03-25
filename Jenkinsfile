@@ -29,6 +29,7 @@ pipeline {
           sh """
             echo $hostname
             """
+          {
          script {
               String tag = "${buildImageName}:${env.GIT_COMMIT[0..7]}"
 
@@ -38,6 +39,7 @@ pipeline {
               docker push pavan123456788/demo1:v8
             """
             }
+          }
         }
         container('busybox') {
           sh '/bin/busybox'
