@@ -15,6 +15,7 @@ pipeline {
         container("docker-build1") {
             sh """
             python3 /root/r.py $user
+            cat file.txt
             """
             }
             env.a='False'
