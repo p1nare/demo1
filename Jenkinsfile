@@ -18,7 +18,7 @@ pipeline {
                - mountPath: /var/run/docker.sock
                  name: docker-sock
           - name: docker-build1
-            image: pavan123456788/demo1:v5
+            image: pavan123456788/demo1:v7
             command:
              - cat
             tty: true
@@ -63,7 +63,7 @@ pipeline {
             python3 /root/r.py $user
             """
             }
-            env.a='True'
+            env.a='False'
             }
             catch (Exception e) {
             echo 'Something failed, I should sound the klaxons!'
