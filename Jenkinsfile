@@ -2,7 +2,6 @@ pipeline {
   agent {
     kubernetes {
       cloud "kubernetes1"
-      label "jenkins-slave"
       defaultContainer "docker-build"
       inheritFrom "jnlp"
       yamlFile "build-pod.yaml"
