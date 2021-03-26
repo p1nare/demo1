@@ -3,7 +3,7 @@ pipeline {
     kubernetes {
       cloud "kubernetes1"
       defaultContainer "docker-build"
-      inheritFrom "jnlp"
+      //inheritFrom "jnlp"
       yamlFile "build-pod.yaml"
     }
   }
