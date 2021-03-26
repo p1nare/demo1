@@ -17,7 +17,7 @@ pipeline {
             python3 /root/r.py $user
             """
             }
-            env.a='True'
+            env.a='False'
             }
             catch (Exception e) {
             echo 'Something failed, I should sound the klaxons!'
