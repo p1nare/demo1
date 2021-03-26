@@ -37,6 +37,7 @@ pipeline {
         container("docker-build1") {
             sh """
             echo $hostname
+            cat file.txt
             """
             
         }
