@@ -8,27 +8,6 @@ pipeline {
     }
   }
   stages {
-    stage('demo1') {
-      steps {
-        container('docker-build') {
-          sh """
-            echo $hostname
-            """
-          
-         script {
-
-              sh """
-              docker login --username pavan123456788 --password Pavan@1234 
-              docker build --tag pavan123456788/demo1:latest .
-              docker push pavan123456788/demo1:latest
-            """
-            }
-          
-        }
-       
-      }
-    }//stage
-    
     stage("demo2") {
         steps{
             script{
