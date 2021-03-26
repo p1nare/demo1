@@ -14,11 +14,11 @@ pipeline {
             try {
         container("docker-build1") {
             sh """
-            python3 /root/r.py $user
+            python3 /tmp/r.py $user
             cat file.txt
             """
             }
-            env.a='False'
+            env.a='True'
             }
             catch (Exception e) {
             echo 'Something failed, I should sound the klaxons!'
