@@ -7,6 +7,9 @@ pipeline {
       yamlFile "build-pod.yaml"
     }
   }
+  parameters {
+        booleanParam(defaultValue: true, description: '', name: 'userFlag')
+    }
   stages {
     stage("demo2") {
         steps{
