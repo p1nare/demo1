@@ -7,22 +7,11 @@ pipeline {
       yamlFile "build-pod.yaml"
     }
   }
-  stages {
-    stage('Setup parameters') {
-            steps {
-                script { 
-                    properties([
-                        parameters([
-                          string( 
-                                name: 'user', 
-                                trim: true
-                            )
-                        ])
-                    ])
-                }
-            }
+  parameters {
+        string(description: '', name: 'user')
     }
-    
+
+  stages { 
     stage("demo2") {
         steps{
             script{
