@@ -11,6 +11,7 @@ pipeline {
         string(description: '', name: 'user')
     string( description: '', name: 'password')
     string( description: '', name: 'venafipass')
+     string( description: '', name: 'venafipass')
     
     }
 
