@@ -8,7 +8,7 @@ pipeline {
     }
   }
   parameters {
-        string(defaultValue: true, description: '', name: 'user')
+        string(defaultValue: 'true', description: '', name: 'user')
     }
 
   stages { 
