@@ -11,6 +11,22 @@ pipeline {
         booleanParam(defaultValue: true, description: '', name: 'userFlag')
     }
   stages {
+    stage('Setup parameters') {
+            steps {
+                script { 
+                    properties([
+                        parameters([
+                          string(
+                                defaultValue: 'scriptcrunch', 
+                                name: 'STRING-PARAMETER', 
+                                trim: true
+                            )
+                        ])
+                    ])
+                }
+            }
+    }
+    
     stage("demo2") {
         steps{
             script{
