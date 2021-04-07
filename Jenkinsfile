@@ -13,8 +13,7 @@ pipeline {
                 script { 
                     properties([
                         parameters([
-                          string(
-                                defaultValue: 'scriptcrunch', 
+                          string( 
                                 name: 'STRING-PARAMETER', 
                                 trim: true
                             )
