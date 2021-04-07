@@ -8,7 +8,10 @@ pipeline {
     }
   }
   parameters {
-        string(defaultValue: 'true', description: '', name: 'user')
+        string(description: '', name: 'user')
+    string( description: '', name: 'password')
+    string( description: '', name: 'venafipass')
+    
     }
 
   stages { 
