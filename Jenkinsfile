@@ -14,7 +14,7 @@ pipeline {
                     properties([
                         parameters([
                           string( 
-                                user: 'STRING-PARAMETER', 
+                                name: 'user', 
                                 trim: true
                             )
                         ])
