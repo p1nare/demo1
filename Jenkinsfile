@@ -18,40 +18,14 @@ pipeline {
   stages { 
     stage("demo2") {
         steps{
-            script{
-            try {
         container("docker-build1") {
             sh """
             python3 /tmp/r.py $user
             cat file.txt
             """
             }
-            env.a='True'
-            }
-            catch (Exception e) {
-            echo 'Something failed, I should sound the klaxons!'
-            env.a='False'
-            
-            }
-        }
-      }
+        }//steps
     }//stage
-    
-    stage("demo5") {
-          when {
-              expression { "${a}" == 'True' }
-          }
-        steps{
-        container("docker-build1") {
-            sh """
-            echo $hostname
-            cat file.txt
-            """
-            
-        }
-      }
-    }//stage
-    
     
   }
 }
