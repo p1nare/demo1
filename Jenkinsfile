@@ -24,7 +24,7 @@ pipeline {
             cat file.txt
             """
             }
-        }//steps
+        }//step
     }//stage
     
   }
