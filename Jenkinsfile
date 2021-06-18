@@ -4,14 +4,10 @@ pipeline {
   stages {
     stage("Test back end") {
       agent {
-        
-    docker {
-        dockerfile true
-        label 'docker'
-    }
+                docker { image 'maven:3.8.1-adoptopenjdk-11' }
+            
 }
-        
-
+       
       steps {
         sh "echo hostname"
       }
