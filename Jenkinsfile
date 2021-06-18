@@ -4,11 +4,13 @@ pipeline {
   stages {
     stage("Test back end") {
       agent {
-        dockerfile {
-          filename "Dockerfile"
-          label "webapps"
-        }
-      }
+        
+    docker {
+        dockerfile true
+        label 'docker'
+    }
+}
+        
 
       steps {
         sh "echo hostname"
