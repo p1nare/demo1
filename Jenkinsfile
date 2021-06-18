@@ -1,31 +1,12 @@
 pipeline {
-  agent {
-    kubernetes {
-      cloud "kubernetes1"
-      defaultContainer "docker-build"
-      //inheritFrom "jnlp"
-      yamlFile "build-pod.yaml"
+    agent {
+        docker { image 'node:14-alpine' }
     }
-  }
-  parameters {
-        string(description: '', name: 'user')
-    string( description: '', name: 'password')
-    string( description: '', name: 'venafipass')
-     string( description: '', name: 'venafipass')
-    
-    }
-
-  stages { 
-    stage("demo2") {
-        steps{
-        container("docker-build1") {
-            sh """
-            python3 /tmp/r.py $user
-            cat file.txt
-            """
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
-        }//step
-    }//stage
-    
-  }
+        }
+    }
 }
