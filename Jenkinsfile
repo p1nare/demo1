@@ -1,14 +1,18 @@
 pipeline {
-    agent {
-        docker{
-        cloud "docker"
-        label "demo-slave1"
-        }
+  agent {
+	docker{
+		image "ubuntu:latest"
+}
+}
+
+  stages {
+    stage("Test back end") {
+      
+      steps {
+        sh "echo hostname"
+      }
+
     }
-    stages {
-        stage('Back-end') {
-            sh"echo hostname"
-        }
-            
-    }
+}
+
 }
