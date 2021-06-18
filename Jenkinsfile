@@ -9,7 +9,7 @@ pipeline {
     stage("Test back end") {
       
       steps {
-        sh "echo hostname"
+        sh "python setup.py"
       }
 
     }
