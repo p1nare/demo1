@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker{
         cloud "docker"
+        label "demo-slave1"
         }
     }
     stages {
