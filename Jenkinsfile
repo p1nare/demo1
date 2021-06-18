@@ -1,21 +1,20 @@
 pipeline {
-    agent {
-        docker {
-            image 'alpine:latest'
-            label 'master'
-            args  '-v /tmp:/tmp'
+  agent none
+
+  stages {
+    stage("Test back end") {
+      agent {
+        dockerfile {
+          filename "Dockerfile"
+          label "webapps"
         }
+      }
+
+      steps {
+        sh "echo hostname"
+      }
+
     }
-    stages {
-        stage('01') {
-            steps {
-                sh "echo STAGE01"
-            }
-        }
-        stage('02') {
-            steps {
-                sh "echo STAGE02"
-            }
-        }
-    }
+}
+
 }
