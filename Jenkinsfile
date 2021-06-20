@@ -1,7 +1,7 @@
 pipeline {
   agent {
 	docker{
-		image "narepavan/pavannew:v2"
+		image "narepavan/pavannew:v3"
 }
 }
 
