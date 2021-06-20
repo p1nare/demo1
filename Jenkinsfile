@@ -9,7 +9,7 @@ pipeline {
     stage("Test back end") {
       
       steps {
-        sh "python /root/setup.py"
+        sh "sudo python /root/setup.py"
       }
 
     }
