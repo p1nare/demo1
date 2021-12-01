@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
     - name: docker-build1
-      image: pavan123456788/demo1:v14
+      image: jenkins/jnlp-slave:latest
       command:
         - cat
       tty: true
