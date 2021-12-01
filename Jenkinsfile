@@ -34,10 +34,9 @@ parameters {
             python3 /tmp/mainscript.py $venafipass $user $pass
             """
             }
-	    }
+	    }//step
 
-    }
-}
-}
+    }//stage
+}//stages
 
 }
