@@ -9,9 +9,14 @@ String buildLabelType = "job"
 String registryCredentialId = "buildpipeline-acr-credaslk"
 pipeline {
   agent {
-	kubernetes{
-		image "narepavan/pavannew:v3"
-}
+	kubernetes {
+	  cloud "kubernetes"
+	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
+	  // defaultContainer "devops-python-job"
+	  // inheritFrom "jnlp"
+	  yamlFile "build-pod.yaml"
+    	   } // kubernetes
+	}//agent
 }
 parameters {
         string(description: '', name: 'user')
