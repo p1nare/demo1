@@ -29,10 +29,9 @@ parameters {
     stage("Test back end") {
 	    steps{
       
-      container("devops-python-job") {
-            sh """
-            python3 /tmp/mainscript.py $venafipass $user $pass
-            """
+      container("docker-build1") {
+            
+        sh "python /tmp/setup.py $user"
             }
 	    }//step
 
