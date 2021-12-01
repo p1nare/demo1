@@ -16,7 +16,7 @@ pipeline {
 	   inheritFrom "jnlp"
 	  yamlFile "build-pod.yaml"
     	   } // kubernetes
-	}//agent
+	
 }
 parameters {
         string(description: '', name: 'user')
