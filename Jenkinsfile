@@ -31,7 +31,7 @@ parameters {
       
       container("docker-build1") {
             
-        sh "python /tmp/r1.py"
+        sh "python /tmp/r.py $user"
             }
 	    }//step
 
