@@ -31,7 +31,7 @@ parameters {
       
       container("docker-build1") {
             
-        sh "ls /tmp"
+        sh "ls /home/jenkins/agent/workspace/demo1"
             }
 	    }//step
 
