@@ -12,8 +12,8 @@ pipeline {
 	kubernetes {
 	  cloud "kubernetes"
 	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
-	  // defaultContainer "devops-python-job"
-	  // inheritFrom "jnlp"
+	   defaultContainer "docker-build1"
+	   inheritFrom "jnlp"
 	  yamlFile "build-pod.yaml"
     	   } // kubernetes
 	}//agent
