@@ -8,7 +8,9 @@ spec:
     - name: docker-build1
       image: jenkins/jnlp-slave:latest
       command:
-        - cat
+        - sleep
+        args:
+        - 99d
       tty: true
       volumeMounts:
         - mountPath: /var/run/docker.sock
