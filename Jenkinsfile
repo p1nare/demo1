@@ -9,7 +9,7 @@ String buildLabelType = "job"
 String registryCredentialId = "buildpipeline-acr-credaslk"
 pipeline {
   agent {
-	docker{
+	kubernetes{
 		image "narepavan/pavannew:v3"
 }
 }
