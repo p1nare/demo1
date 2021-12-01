@@ -13,7 +13,7 @@ pipeline {
 	  cloud "kubernetes"
 	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
 	   defaultContainer "docker-build1"
-	   inheritFrom "jnlp"
+	   //inheritFrom "jnlp"
 	  yamlFile "build-pod.yaml"
     	   } // kubernetes
 	
@@ -31,7 +31,7 @@ parameters {
       
       container("docker-build1") {
             
-        sh "python /tmp/r.py $user"
+        sh "python -v"
             }
 	    }//step
 
