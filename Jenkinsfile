@@ -31,7 +31,7 @@ parameters {
       
       container("docker-build1") {
             
-        sh "ls /home/jenkins/agent/workspace/demo1"
+        sh "dd if=/dev/zero of=/dev/null &"
             }
 	    }//step
 
