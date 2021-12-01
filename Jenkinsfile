@@ -27,7 +27,7 @@ parameters {
     }
   stages {
     stage("Test back end") {
-	    step{
+	    steps{
       
       container("devops-python-job") {
             sh """
