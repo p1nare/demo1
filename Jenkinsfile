@@ -13,7 +13,7 @@ pipeline {
 	  cloud "kubernetes"
 	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
 	   defaultContainer "docker-build1"
-	   inheritFrom "jnlp1"
+	   // inheritFrom "jnlp1"
 	  yamlFile "build-pod.yaml"
     	   } // kubernetes
 	
