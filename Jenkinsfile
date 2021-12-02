@@ -10,7 +10,7 @@ String registryCredentialId = "buildpipeline-acr-credaslk"
 pipeline {
   agent {
 	kubernetes {
-	  cloud "kubernetes"
+	  cloud "kubernetes1"
 	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
 	   defaultContainer "docker-build1"
 	   //inheritFrom "jnlp"
