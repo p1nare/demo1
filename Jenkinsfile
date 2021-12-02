@@ -12,7 +12,7 @@ pipeline {
 	kubernetes {
 	  cloud "kubernetes"
 	  // label "dockerbuild-${UUID.randomUUID().toString()[0..10]}"
-	  inheritFrom "jenkins/jnlp-agent-maven"
+	  // inheritFrom "jenkins/jnlp-agent-maven"
 	   defaultContainer "docker-build1"
 	  yamlFile "build-pod.yaml"
     	   } // kubernetes
