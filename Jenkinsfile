@@ -31,7 +31,7 @@ parameters {
       
       container("docker-build1") {
             
-        sh "sleep 100"
+        sh "sleep 1000"
             }
 	    }//step
 
