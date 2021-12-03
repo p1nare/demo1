@@ -12,13 +12,6 @@ spec:
       args:
       - 99d
       tty: true
-      resources:
-          requests:
-            cpu: 25m
-            memory: 64Mi
-          limits:
-            cpu: 410m
-            memory: 512Mi
       volumeMounts:
         - mountPath: /var/run/docker.sock
           name: docker-sock
